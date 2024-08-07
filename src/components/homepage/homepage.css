@@ -1,0 +1,37 @@
+/* Slider Container */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Adjust height as needed */
+    overflow: hidden;
+  }
+  
+  /* Individual Slide */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+  }
+  
+  /* Active Slide */
+  .slide.active {
+    opacity: 1;
+  }
+  
+  /* Slide Text */
+  .slide-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  

@@ -1,0 +1,257 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #d4e0d9, #2D3192); /* Gradient background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for more depth */
+  position: fixed;
+  width: 100%;
+  height: 4rem;
+  top: 0;
+  z-index: 1000;
+  color: #fff; /* Change text color to white for better contrast */
+}
+
+/* Nav Items */
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+
+/* Logo Section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  width: 5rem; /* Adjust width to fit within the navbar */
+  padding: 0.25rem; /* Add some padding around the logo */
+  border-radius: 4px; /* Optional: rounded corners */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none; /* Hide by default on larger screens */
+}
+
+/* Nav Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Increased gap for better spacing */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  position: relative;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #fff; /* Change text color to white for better contrast */
+  font-weight: 500;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding: 0.5rem 0;
+}
+
+.navbar-links a:hover {
+  color: #ffcc00; /* Change hover color for better visibility */
+  border-bottom: 2px solid #ffcc00; /* Underline effect on hover */
+}
+
+/* Search Icon and Bar */
+.search-icon {
+  cursor: pointer;
+  font-size: 1.2rem; /* Increased size for better visibility */
+  color: #fff; /* Change icon color to white for better contrast */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 4px;
+  width: 200px;
+  display: none; /* Initially hidden */
+}
+
+.search-bar.visible {
+  display: block; /* Show search bar when 'visible' class is added */
+}
+
+.search-enter-btn {
+  display: none; /* Initially hidden */
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #2D3192; /* Apply secondary color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-enter-btn.visible {
+  display: inline-block; /* Show button when 'visible' class is added */
+}
+
+.search-enter-btn:hover {
+  background-color: #1AAD58;
+}
+
+/* Flag Icon */
+.flag-icon {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 0.25rem;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+}
+
+/* Flag Icon Container */
+.flag-container {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+/* Basic styles for visibility */
+.flag-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+/* Dropdown Item */
+.flag-dropdown-item {
+  padding: 0.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.flag-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.flag-dropdown.show {
+  display: block;
+}
+
+.flag-dropdown-item img {
+  width: 30px; /* Ensure the flag icons are round */
+  height: 30px;
+  border-radius: 50%; /* Make flag icons round */
+}
+
+/* Login/Signup Button */
+.login-signup-btn {
+  background: none;
+  color: #fff; /* Change hover text color */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+.login-signup-btn:hover {
+  background: #8dc1ba; /* Change hover background color */
+  color: #fff; /* Change hover text color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    height: auto; /* Allow the navbar to adjust its height */
+  }
+
+  .nav-items {
+    width: 100%;
+    flex-direction: row; /* Align items in a row for mobile */
+    justify-content: space-between; /* Space out items within nav-items */
+    align-items: center;
+  }
+
+  .navbar-logo {
+    flex: 1; /* Allow the logo to take space on the left */
+    display: flex;
+    justify-content: flex-start; /* Align logo to the left */
+  }
+
+  .navbar-logo img {
+    width: 5rem; /* Adjust the size of the logo */
+  }
+
+  .navbar-links {
+    display: none; /* Hide links by default */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    position: absolute; /* Position links absolutely */
+    top: 4rem; /* Position below the navbar */
+    left: 0;
+    background: #2D3192; /* Background color for dropdown */
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  .navbar-links.active {
+    display: flex; /* Show links when active */
+  }
+
+  .navbar-links li {
+    width: 100%;
+  }
+
+  .navbar-links a {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .search-bar {
+    width: auto; /* Allow the search bar to fit its content */
+    margin-left: 1rem; /* Space between the search icon and the search bar */
+  }
+
+  .search-enter-btn {
+    margin-left: 1rem; /* Space between search bar and button */
+  }
+
+  .flag-container,
+  .login-signup-btn {
+    margin-left: 1rem; /* Space between elements */
+  }
+
+  .hamburger-menu {
+    display: flex; /* Show hamburger menu on mobile and tablet screens */
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem; /* Adjust size as needed */
+    color: #fff; /* Change color to match your theme */
+    width: 3rem;
+  }
+}
