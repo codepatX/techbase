@@ -185,7 +185,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem;
-    height: auto; /* Allow the navbar to adjust its height */
+    height: 2rem; /* Allow the navbar to adjust its height */
   }
 
   .nav-items {

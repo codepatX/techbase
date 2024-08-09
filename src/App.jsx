@@ -1,12 +1,14 @@
 import NavBar from "./components/navbar/nav";
-import HomePage from "./components/homepage/homepage";
+import Homepage from "./components/homepage/homepage";
+
 
 function App() {
 
   return (
     <>
       <NavBar/>
-      <HomePage/>
+      <Homepage/>
+
     </>
   )
 }
