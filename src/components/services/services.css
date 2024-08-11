@@ -1,0 +1,122 @@
+/* services.css */
+
+.services-section {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.services-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.services-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    flex: 1;
+    max-width: 300px;
+    min-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem auto;
+    background-color: #e9730c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon img {
+    width: 50%;
+    height: 50%;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.learn-more-btn {
+    padding: 0.5rem 1.5rem;
+    background-color: #e9730c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #d56209;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        max-width: 90%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-title {
+        font-size: 1.5rem;
+    }
+
+    .services-subtitle {
+        font-size: 1rem;
+    }
+
+    .service-title {
+        font-size: 1.2rem;
+    }
+
+    .service-description {
+        font-size: 0.9rem;
+    }
+
+    .learn-more-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+}

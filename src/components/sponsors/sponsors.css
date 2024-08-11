@@ -1,0 +1,58 @@
+.sponsors-container {
+  width: 100%;
+  height: 7rem;
+  overflow: hidden;
+  position: relative;
+  background-color: #EBEAE6; /* Background color matching your color scheme */
+  padding: 2rem 0rem;
+}
+
+.sponsors-slider {
+  display: flex;
+  height: 100%;
+  animation: slide 20s linear infinite;
+}
+
+.sponsors-slide {
+  display: flex;
+  height: 100%;
+  width: calc(200%); /* Width is doubled to accommodate the duplicated images */
+}
+
+.sponsors-slide img {
+  height: 100%;
+  filter: grayscale(100%); /* Makes logos grayscale by default */
+  transition: filter 0.3s ease-in-out;
+}
+
+.sponsors-slide img:hover {
+  filter: grayscale(0); /* Removes grayscale on hover */
+}
+
+/* Responsive adjustments for tablet */
+@media (max-width: 768px) {
+  .sponsors-container {
+    height: 5rem;
+    padding: 1rem 0rem;
+  }
+
+  .sponsors-slide img {
+    height: 80%; /* Slightly smaller images on tablet */
+  }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+  .sponsors-container {
+    height: 4rem;
+  }
+
+  .sponsors-slide img {
+    height: 70%; /* Smaller images on mobile */
+  }
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Slide by 50% to account for the doubled content */
+}

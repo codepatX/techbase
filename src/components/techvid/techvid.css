@@ -1,0 +1,95 @@
+.techvid-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 2rem;
+    border-radius: 8px;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.techvid-text {
+    flex: 1;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    max-width: 50%;
+}
+
+.techvid-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    border-bottom: #e9730c solid 4px;
+}
+
+.techvid-text p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.highlight {
+    color: #e9730c;
+    font-weight: bold;
+}
+
+.techvid-video {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%;
+    height: auto;
+}
+
+.video-frame {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .techvid-container {
+        flex-direction: column;
+        padding: 1rem;
+        height: auto;
+    }
+
+    .techvid-video {
+        order: -1;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .techvid-text {
+        padding-right: 0;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .techvid-text h2, .techvid-text p {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .techvid-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .techvid-text p {
+        font-size: 1rem;
+    }
+
+    .video-frame {
+        height: 15rem;
+    }
+}

@@ -1,46 +1,168 @@
-/* homepage.css */
-
-.slider {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Full viewport height */
-  overflow: hidden;
-}
-
+/* Common Styles */
 .slide {
-  position: absolute;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   width: 100%;
-  height: 100%;
-  transition: opacity 1s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
 }
 
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.text-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  border: 2px solid transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1.5s ease-in-out forwards, borderGlow 3s infinite alternate;
 }
 
-.slide-text {
+.text-container h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+  animation: textSlideIn 1s ease-out forwards;
+}
+
+.text-container p {
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  animation: textSlideIn 1s ease-out 0.5s forwards;
+}
+
+/* Positioning Buttons on Computer Screen */
+.prev, .next {
   position: absolute;
-  bottom: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: #fff;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 2;
+}
+
+.prev {
+  left: 20px; /* Position the previous button on the left side */
+}
+
+.next {
+  right: 20px; /* Position the next button on the right side */
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+
+
+/* Dots Style */
+.dots {
+  position: absolute;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  color: #fff;
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  text-align: center;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  border-radius: 5px;
+  display: flex;
+  gap: 8px;
+  z-index: 3; /* Make sure they are on top of the slider */
 }
 
-/* Optional: Add a fade-in effect for the slides */
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: gray;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #fff; /* Highlight active dot */
+}
+
+.dot:hover {
+  background-color: #ccc; /* Change color on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* Tablet screens */
+  .text-container {
+    max-width: 80%; /* Reduce width on tablets */
+    text-align: left;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .text-container h1 {
+    font-size: 2.8rem; /* Adjust text size for tablets */
+  }
+
+  .text-container p {
+    font-size: 1.5rem; /* Adjust subtitle size for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile screens */
+  .prev, .next {
+    display: none; /* Hide buttons on mobile screens */
+  }
+
+  .text-container {
+    max-width: 90%; /* Reduce width on mobiles */
+    text-align: left;
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+    border: none;
+
+  }
+
+  .text-container h1 {
+    font-size: 2.2rem; /* Adjust text size for mobiles */
+  }
+
+  .text-container p {
+    font-size: 1.3rem; /* Adjust subtitle size for mobiles */
+  }
+}
+
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.slide {
-  animation: fadeIn 2s ease-in-out;
+@keyframes borderGlow {
+  from {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  to {
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes textSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
